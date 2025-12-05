@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vemula Moksha | Design Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;200;300;400;500;600;700;800&family=Manrope:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              bg: {
+                DEFAULT: 'var(--bg-primary)', 
+                secondary: 'var(--bg-secondary)',
+              },
+              text: {
+                primary: 'var(--text-primary)',
+                secondary: 'var(--text-secondary)',
+                muted: 'var(--text-muted)',
+              },
+              border: 'var(--border-color)',
+              surface: 'var(--surface-color)',
+              accent: {
+                DEFAULT: 'var(--accent-primary)',
+                highlight: 'var(--accent-highlight)',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter Tight', 'sans-serif'],
+              mono: ['Manrope', 'sans-serif'],
+            },
+            transitionTimingFunction: {
+              'cinema': 'cubic-bezier(0.22, 1, 0.36, 1)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        /* Light Mode Defaults - Monochrome */
+        --bg-primary: #ffffff;
+        --bg-secondary: #f8fafc;
+        --text-primary: #0f172a;
+        --text-secondary: #475569;
+        --text-muted: #94a3b8;
+        --border-color: rgba(15, 23, 42, 0.1);
+        --surface-color: rgba(15, 23, 42, 0.04);
+        --accent-primary: #0f172a;
+        --accent-highlight: #52525b; /* Zinc-600 */
+        --spotlight-rgb: 0, 0, 0;
+      }
+
+      .dark {
+        /* Dark Mode Overrides - Pure Monochrome */
+        --bg-primary: #050505;
+        --bg-secondary: #0a0a0a;
+        --text-primary: #EAEAEA;
+        --text-secondary: #888888;
+        --text-muted: #444444;
+        --border-color: rgba(255, 255, 255, 0.1);
+        --surface-color: rgba(255, 255, 255, 0.05);
+        --accent-primary: #ffffff;
+        --accent-highlight: #d4d4d8; /* Zinc-300 */
+        --spotlight-rgb: 255, 255, 255;
+      }
+
+      body {
+        margin: 0;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        cursor: none;
+        overflow-x: hidden;
+      }
+      
+      /* Hide Scrollbar but allow scrolling */
+      ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
+      
+      .grain-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9998;
+        opacity: 0.05;
+        mix-blend-mode: overlay;
+      }
+
+      ::selection {
+        background: rgba(255, 255, 255, 0.2);
+        color: var(--text-primary);
+      }
+
+      /* View Transitions API - Disable default fade to allow custom wave */
+      ::view-transition-old(root),
+      ::view-transition-new(root) {
+        animation: none;
+        mix-blend-mode: normal;
+      }
+      ::view-transition-new(root) {
+        z-index: 9999;
+      }
+      ::view-transition-old(root) {
+        z-index: 1;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
